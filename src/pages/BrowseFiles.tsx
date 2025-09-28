@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { File as FileIcon } from "lucide-react";
-import File from "../components/File";
 import { useNavigate } from "react-router-dom";
+import { invoke } from '@tauri-apps/api/core';
+import File from "../components/File";
 
 const BrowseFiles: React.FC = () => {
     const [files] = useState([
@@ -11,6 +12,12 @@ const BrowseFiles: React.FC = () => {
         "Image.png",
         "Notes.docx",
     ]);
+
+    const navigate = useNavigate();
+
+    const selectFile = () => {
+
+    };
 
     const handleFileClick = (fileName: string) => {
         console.log(`File clicked: ${fileName}`);
