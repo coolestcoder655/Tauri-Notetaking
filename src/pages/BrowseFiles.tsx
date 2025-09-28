@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { File as FileIcon } from "lucide-react";
 import File from "../components/File";
+import { useNavigate } from "react-router-dom";
 
 const BrowseFiles: React.FC = () => {
-    const [files, setFiles] = useState([
+    const [files] = useState([
         "File1.txt",
         "File2.txt",
         "Document.pdf",
