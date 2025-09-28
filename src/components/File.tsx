@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { File as FileIcon, MoreVertical } from 'lucide-react';
 
 interface Props {
@@ -8,17 +7,13 @@ interface Props {
 }
 
 const File: React.FC<Props> = ({ fileName, onClick, onOptionsClick }) => {
-    const [, setIsHovered] = useState(false);
-
     return (
         <div
-            className="relative p-4 bg-white border border-gray-200 rounded-lg shadow-sm cursor-pointer transition-all duration-200 hover:shadow-md hover:border-gray-300 group"
+            className="relative p-4 bg-white border border-gray-200 rounded-lg shadow-sm cursor-pointer transition-all duration-200 hover:shadow-md hover:border-gray-300 group focus:ring-2 focus:ring-blue-500"
             onClick={onClick}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
         >
             {/* Header */}
-            <div className="flex items-start justify-between mb-2">
+            <div className="flex items-start justify-between">
                 <div className="flex items-center gap-2 flex-1 min-w-0">
                     <div className="text-gray-600 flex-shrink-0">
                         <FileIcon className="w-5 h-5" />
